@@ -1,0 +1,1013 @@
+2025-07-17 21:54:38,691 - root - INFO - ✅ 所有依赖检查完成
+2025-07-17 21:54:38,708 - __main__ - INFO - Web服务启动成功
+2025-07-17 21:54:38,720 - __main__ - INFO - 投影系统启动成功
+2025-07-17 21:54:41,367 - simple_flask_app - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-17 21:54:41,538 - root - INFO - 启动Web服务 http://0.0.0.0:5000
+2025-07-17 21:54:42,809 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-07-17 21:54:42,809 - werkzeug - INFO -  * Running on http://192.168.1.104:5000/ (Press CTRL+C to quit)
+2025-07-17 21:54:47,650 - root - INFO - 启动自动投影系统
+2025-07-17 21:54:48,891 - auto_projector - INFO -  自动投影系统启动: http://localhost:8080/color.html
+2025-07-17 21:54:48,897 - auto_projector - INFO - 🎨 已设置默认投影主题 - 投影仪将立即显示蓝色宁静效果
+2025-07-17 21:54:51,147 - auto_projector - INFO - 🌐 已自动打开投影页面: http://localhost:8080/color.html
+2025-07-17 21:54:51,902 - auto_projector - INFO - 🔄 开始持续分析，间隔30秒
+2025-07-17 21:54:51,902 - tools.registry - INFO - 图像分析工具注册成功
+2025-07-17 21:54:51,902 - tools.registry - INFO - 姿态分析工具注册成功
+2025-07-17 21:54:51,939 - main_agent - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-17 21:54:51,997 - auto_projector - INFO - ✅ LETDANCE工作流初始化成功
+2025-07-17 21:54:51,997 - auto_projector - INFO - 
+==================== 第1轮分析 ====================
+2025-07-17 21:54:51,997 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 21:54:53,850 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:54:54,247 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 21:54:54,604 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 21:54:55,354 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:54:56,597 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:54:56,624 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-17 21:54:56,624 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-17 21:54:56,624 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-17 21:54:56,624 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 21:54:56,624 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 21:55:07,319 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:55:07] "GET / HTTP/1.1" 200 -
+2025-07-17 21:55:07,422 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:55:07] "GET /api/mood/history?user_id=user_fvjc6b0vf HTTP/1.1" 200 -
+2025-07-17 21:55:07,422 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:55:07] "GET /api/user/insights?user_id=user_fvjc6b0vf HTTP/1.1" 200 -
+2025-07-17 21:55:07,429 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:55:07] "GET /api/memory/summary?user_id=user_fvjc6b0vf HTTP/1.1" 200 -
+2025-07-17 21:55:15,406 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:55:15,412 - simple_flask_app - INFO - 用户 user_fvjc6b0vf 情绪分析完成: 兴奋
+2025-07-17 21:55:15,412 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:55:15] "POST /api/mood HTTP/1.1" 200 -
+2025-07-17 21:55:15,452 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:55:15] "GET /api/user/insights?user_id=user_fvjc6b0vf HTTP/1.1" 200 -
+2025-07-17 21:55:15,463 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:55:15] "GET /api/mood/history?user_id=user_fvjc6b0vf HTTP/1.1" 200 -
+2025-07-17 21:55:15,470 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:55:15] "GET /api/memory/summary?user_id=user_fvjc6b0vf HTTP/1.1" 200 -
+2025-07-17 21:55:26,877 - auto_projector - INFO - 
+==================== 第2轮分析 ====================
+2025-07-17 21:55:26,877 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 21:55:28,256 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:55:28,475 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 21:55:29,241 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 21:55:29,883 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:55:31,056 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:55:31,058 - auto_projector - INFO - ✅ 分析完成，关键词: ['无法提取音乐风格关键词。']
+2025-07-17 21:55:31,058 - auto_projector - INFO - 🎨 投影更新: ['无法提取音乐风格关键词。'] -> ['emotion1']
+2025-07-17 21:55:31,058 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (无法提取音乐风格关键词。)
+2025-07-17 21:55:31,058 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 21:55:31,058 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 21:56:01,271 - auto_projector - INFO - 
+==================== 第3轮分析 ====================
+2025-07-17 21:56:01,273 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 21:56:02,891 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:56:03,496 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 21:56:03,956 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 21:56:04,721 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:56:07,768 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:56:07,773 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-17 21:56:07,773 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-17 21:56:07,773 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-17 21:56:07,773 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 21:56:07,773 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 21:56:38,033 - auto_projector - INFO - 
+==================== 第4轮分析 ====================
+2025-07-17 21:56:38,033 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 21:56:39,363 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:56:39,537 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 21:56:39,781 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 21:56:40,372 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:56:42,795 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:56:42,808 - auto_projector - INFO - ✅ 分析完成，关键词: ['无法提取']
+2025-07-17 21:56:42,808 - auto_projector - INFO - 🎨 投影更新: ['无法提取'] -> ['emotion1']
+2025-07-17 21:56:42,808 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (无法提取)
+2025-07-17 21:56:42,808 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 21:56:42,808 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 21:56:47,100 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:56:47,100 - simple_flask_app - INFO - 用户 user_fvjc6b0vf 情绪分析完成: 平静
+2025-07-17 21:56:47,100 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:56:47] "POST /api/mood HTTP/1.1" 200 -
+2025-07-17 21:56:47,122 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:56:47] "GET /api/user/insights?user_id=user_fvjc6b0vf HTTP/1.1" 200 -
+2025-07-17 21:56:47,131 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:56:47] "GET /api/mood/history?user_id=user_fvjc6b0vf HTTP/1.1" 200 -
+2025-07-17 21:56:47,137 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:56:47] "GET /api/memory/summary?user_id=user_fvjc6b0vf HTTP/1.1" 200 -
+2025-07-17 21:56:58,673 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:56:58,677 - simple_flask_app - INFO - 用户 user_fvjc6b0vf 情绪分析完成: 愤怒
+2025-07-17 21:56:58,679 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:56:58] "POST /api/mood HTTP/1.1" 200 -
+2025-07-17 21:56:58,709 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:56:58] "GET /api/mood/history?user_id=user_fvjc6b0vf HTTP/1.1" 200 -
+2025-07-17 21:56:58,731 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:56:58] "GET /api/memory/summary?user_id=user_fvjc6b0vf HTTP/1.1" 200 -
+2025-07-17 21:56:58,736 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 21:56:58] "GET /api/user/insights?user_id=user_fvjc6b0vf HTTP/1.1" 200 -
+2025-07-17 21:57:13,035 - auto_projector - INFO - 
+==================== 第5轮分析 ====================
+2025-07-17 21:57:13,035 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 21:57:14,924 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:57:15,205 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 21:57:15,550 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 21:57:16,181 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:57:17,997 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:57:17,998 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-17 21:57:17,998 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-17 21:57:17,998 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-17 21:57:17,998 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 21:57:17,998 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 21:57:48,257 - auto_projector - INFO - 
+==================== 第6轮分析 ====================
+2025-07-17 21:57:48,258 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 21:57:50,473 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:57:52,008 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 21:57:52,380 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 21:57:52,942 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:57:55,111 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:57:55,113 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-17 21:57:55,113 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-17 21:57:55,113 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-17 21:57:55,113 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 21:57:55,113 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 21:58:25,455 - auto_projector - INFO - 
+==================== 第7轮分析 ====================
+2025-07-17 21:58:25,456 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 21:58:26,997 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:58:28,315 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 21:58:28,647 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 21:58:29,319 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:58:32,951 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:58:32,953 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-17 21:58:32,953 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-17 21:58:32,953 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-17 21:58:32,953 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 21:58:32,953 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 21:59:03,275 - auto_projector - INFO - 
+==================== 第8轮分析 ====================
+2025-07-17 21:59:03,275 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 21:59:08,782 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:59:09,162 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 21:59:09,413 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 21:59:10,015 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:59:11,785 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:59:11,788 - auto_projector - INFO - ✅ 分析完成，关键词: ['抱歉，分析结果中没有音乐风格相关的信息，无法提取音乐风格关键词。']
+2025-07-17 21:59:11,788 - auto_projector - INFO - 🎨 投影更新: ['抱歉，分析结果中没有音乐风格相关的信息，无法提取音乐风格关键词。'] -> ['emotion1']
+2025-07-17 21:59:11,788 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (抱歉，分析结果中没有音乐风格相关的信息，无法提取音乐风格关键词。)
+2025-07-17 21:59:11,788 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 21:59:11,788 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 21:59:42,043 - auto_projector - INFO - 
+==================== 第9轮分析 ====================
+2025-07-17 21:59:42,043 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 21:59:45,369 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:59:46,516 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 21:59:46,835 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 21:59:47,524 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:59:50,389 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 21:59:50,396 - auto_projector - INFO - ✅ 分析完成，关键词: ['无法提取。']
+2025-07-17 21:59:50,396 - auto_projector - INFO - 🎨 投影更新: ['无法提取。'] -> ['emotion1']
+2025-07-17 21:59:50,396 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (无法提取。)
+2025-07-17 21:59:50,396 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 21:59:50,397 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 22:00:20,718 - auto_projector - INFO - 
+==================== 第10轮分析 ====================
+2025-07-17 22:00:20,719 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 22:00:22,294 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:00:22,631 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 22:00:22,905 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 22:00:23,479 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:00:25,089 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:00:25,092 - auto_projector - INFO - ✅ 分析完成，关键词: ['无法提取音乐风格关键词。']
+2025-07-17 22:00:25,093 - auto_projector - INFO - 🎨 投影更新: ['无法提取音乐风格关键词。'] -> ['emotion1']
+2025-07-17 22:00:25,093 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (无法提取音乐风格关键词。)
+2025-07-17 22:00:25,093 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 22:00:25,093 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 22:00:55,318 - auto_projector - INFO - 
+==================== 第11轮分析 ====================
+2025-07-17 22:00:55,318 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 22:00:57,510 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:00:57,935 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 22:00:58,204 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 22:00:58,941 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:01:00,376 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:01:00,378 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-17 22:01:00,380 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-17 22:01:00,380 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-17 22:01:00,380 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 22:01:00,380 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 22:01:30,611 - auto_projector - INFO - 
+==================== 第12轮分析 ====================
+2025-07-17 22:01:30,612 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 22:01:32,140 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:01:32,301 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 22:01:32,623 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 22:01:33,231 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:01:36,385 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:01:36,387 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-17 22:01:36,390 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-17 22:01:36,390 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-17 22:01:36,394 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 22:01:36,394 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 22:07:40,623 - root - INFO - ✅ 所有依赖检查完成
+2025-07-17 22:07:40,623 - __main__ - INFO - Web服务启动成功
+2025-07-17 22:07:40,627 - __main__ - INFO - 投影系统启动成功
+2025-07-17 22:07:43,560 - simple_flask_app - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-17 22:07:43,731 - root - INFO - 启动Web服务 http://0.0.0.0:5000
+2025-07-17 22:07:45,443 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-07-17 22:07:45,456 - werkzeug - INFO -  * Running on http://192.168.1.104:5000/ (Press CTRL+C to quit)
+2025-07-17 22:07:46,225 - root - INFO - 启动自动投影系统
+2025-07-17 22:07:47,064 - auto_projector - INFO -  自动投影系统启动: http://localhost:8080/color.html
+2025-07-17 22:07:47,067 - auto_projector - INFO - 🎨 已设置默认投影主题 - 投影仪将立即显示蓝色宁静效果
+2025-07-17 22:07:49,311 - auto_projector - INFO - 🌐 已自动打开投影页面: http://localhost:8080/color.html
+2025-07-17 22:07:50,076 - auto_projector - INFO - 🔄 开始持续分析，间隔30秒
+2025-07-17 22:07:50,078 - tools.registry - INFO - 图像分析工具注册成功
+2025-07-17 22:07:50,078 - tools.registry - INFO - 姿态分析工具注册成功
+2025-07-17 22:07:50,080 - main_agent - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-17 22:07:50,164 - auto_projector - INFO - ✅ LETDANCE工作流初始化成功
+2025-07-17 22:07:50,164 - auto_projector - INFO - 
+==================== 第1轮分析 ====================
+2025-07-17 22:07:50,164 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 22:07:52,068 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:07:52,393 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 22:07:52,745 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 22:07:53,354 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:07:54,960 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:07:54,976 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-17 22:07:54,978 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-17 22:07:54,978 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-17 22:07:54,978 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 22:07:54,980 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 22:08:25,280 - auto_projector - INFO - 
+==================== 第2轮分析 ====================
+2025-07-17 22:08:25,288 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 22:08:27,274 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:08:27,366 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 22:08:27,783 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 22:08:28,427 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:08:29,809 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:08:29,813 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-17 22:08:29,813 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-17 22:08:29,815 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-17 22:08:29,815 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 22:08:29,848 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 22:08:53,826 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:08:53] "GET / HTTP/1.1" 200 -
+2025-07-17 22:08:53,907 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:08:53] "GET /api/mood/history?user_id=user_28glij4ck&limit=100 HTTP/1.1" 200 -
+2025-07-17 22:08:53,960 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:08:53] "GET /api/user/insights?user_id=user_28glij4ck HTTP/1.1" 200 -
+2025-07-17 22:08:54,027 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:08:54] "GET /api/memory/summary?user_id=user_28glij4ck HTTP/1.1" 200 -
+2025-07-17 22:09:00,099 - auto_projector - INFO - 
+==================== 第3轮分析 ====================
+2025-07-17 22:09:00,101 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 22:09:01,810 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:09:01,977 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 22:09:02,360 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 22:09:03,076 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:09:07,381 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:09:07,383 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-17 22:09:07,386 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-17 22:09:07,386 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-17 22:09:07,386 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 22:09:07,386 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 22:09:11,871 - __main__ - INFO - 收到中断信号，正在关闭系统...
+2025-07-17 22:24:59,826 - root - INFO - ✅ 所有依赖检查完成
+2025-07-17 22:24:59,827 - __main__ - INFO - Web服务启动成功
+2025-07-17 22:24:59,827 - __main__ - INFO - 投影系统启动成功
+2025-07-17 22:25:03,950 - simple_flask_app - ERROR - LLM初始化失败: 'AzureConfig' object has no attribute 'azure_endpoint'
+2025-07-17 22:25:09,045 - root - INFO - 启动自动投影系统
+2025-07-17 22:25:10,562 - auto_projector - INFO -  自动投影系统启动: http://localhost:8080/color.html
+2025-07-17 22:25:10,566 - auto_projector - INFO - 🎨 已设置默认投影主题 - 投影仪将立即显示蓝色宁静效果
+2025-07-17 22:25:12,764 - auto_projector - INFO - 🌐 已自动打开投影页面: http://localhost:8080/color.html
+2025-07-17 22:25:13,575 - auto_projector - INFO - 🔄 开始持续分析，间隔30秒
+2025-07-17 22:25:13,575 - tools.registry - INFO - 图像分析工具注册成功
+2025-07-17 22:25:13,575 - tools.registry - INFO - 姿态分析工具注册成功
+2025-07-17 22:25:13,578 - main_agent - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-17 22:25:13,742 - auto_projector - INFO - ✅ LETDANCE工作流初始化成功
+2025-07-17 22:25:13,742 - auto_projector - INFO - 
+==================== 第1轮分析 ====================
+2025-07-17 22:25:13,742 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 22:25:15,273 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:25:15,417 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 22:25:15,757 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 22:25:16,407 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:25:18,548 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:25:18,562 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-17 22:25:18,562 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-17 22:25:18,562 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-17 22:25:18,562 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 22:25:18,564 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 22:25:48,755 - auto_projector - INFO - 
+==================== 第2轮分析 ====================
+2025-07-17 22:25:48,755 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 22:25:50,314 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:25:50,438 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 22:25:50,720 - __main__ - INFO - 收到中断信号，正在关闭系统...
+2025-07-17 22:26:03,927 - root - INFO - ✅ 所有依赖检查完成
+2025-07-17 22:26:03,927 - __main__ - INFO - Web服务启动成功
+2025-07-17 22:26:03,927 - __main__ - INFO - 投影系统启动成功
+2025-07-17 22:26:05,938 - simple_flask_app - ERROR - LLM初始化失败: 'AzureConfig' object has no attribute 'azure_endpoint'
+2025-07-17 22:26:07,799 - root - INFO - 启动自动投影系统
+2025-07-17 22:26:09,070 - auto_projector - INFO -  自动投影系统启动: http://localhost:8080/color.html
+2025-07-17 22:26:09,070 - auto_projector - INFO - 🎨 已设置默认投影主题 - 投影仪将立即显示蓝色宁静效果
+2025-07-17 22:26:11,298 - auto_projector - INFO - 🌐 已自动打开投影页面: http://localhost:8080/color.html
+2025-07-17 22:26:12,074 - auto_projector - INFO - 🔄 开始持续分析，间隔30秒
+2025-07-17 22:26:12,074 - tools.registry - INFO - 图像分析工具注册成功
+2025-07-17 22:26:12,074 - tools.registry - INFO - 姿态分析工具注册成功
+2025-07-17 22:26:12,074 - main_agent - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-17 22:26:12,257 - auto_projector - INFO - ✅ LETDANCE工作流初始化成功
+2025-07-17 22:26:12,257 - auto_projector - INFO - 
+==================== 第1轮分析 ====================
+2025-07-17 22:26:12,257 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 22:26:13,962 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:26:14,089 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 22:26:14,378 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 22:26:14,939 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:26:15,578 - __main__ - INFO - 收到中断信号，正在关闭系统...
+2025-07-17 22:27:41,894 - root - INFO - ✅ 所有依赖检查完成
+2025-07-17 22:27:41,894 - __main__ - INFO - Web服务启动成功
+2025-07-17 22:27:41,894 - __main__ - INFO - 投影系统启动成功
+2025-07-17 22:27:44,326 - simple_flask_app - INFO - Azure OpenAI LLM 初始化成功
+2025-07-17 22:27:44,378 - root - INFO - 启动Web服务 http://0.0.0.0:5000
+2025-07-17 22:27:45,659 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-07-17 22:27:45,660 - werkzeug - INFO -  * Running on http://192.168.1.104:5000/ (Press CTRL+C to quit)
+2025-07-17 22:27:46,230 - root - INFO - 启动自动投影系统
+2025-07-17 22:27:47,078 - auto_projector - INFO -  自动投影系统启动: http://localhost:8080/color.html
+2025-07-17 22:27:47,079 - auto_projector - INFO - 🎨 已设置默认投影主题 - 投影仪将立即显示蓝色宁静效果
+2025-07-17 22:27:49,255 - auto_projector - INFO - 🌐 已自动打开投影页面: http://localhost:8080/color.html
+2025-07-17 22:27:50,085 - auto_projector - INFO - 🔄 开始持续分析，间隔30秒
+2025-07-17 22:27:50,085 - tools.registry - INFO - 图像分析工具注册成功
+2025-07-17 22:27:50,085 - tools.registry - INFO - 姿态分析工具注册成功
+2025-07-17 22:27:50,085 - main_agent - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-17 22:27:50,149 - auto_projector - INFO - ✅ LETDANCE工作流初始化成功
+2025-07-17 22:27:50,152 - auto_projector - INFO - 
+==================== 第1轮分析 ====================
+2025-07-17 22:27:50,153 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 22:27:51,662 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:27:52,091 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 22:27:52,382 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 22:27:53,015 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:27:54,386 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:27:54,401 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-17 22:27:54,402 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-17 22:27:54,402 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-17 22:27:54,403 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 22:27:54,403 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 22:28:08,382 - simple_flask_app - INFO - 为用户 user_32b87b60 创建新的ConversationBufferMemory
+2025-07-17 22:28:08,394 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:08] "GET / HTTP/1.1" 200 -
+2025-07-17 22:28:09,014 - simple_flask_app - INFO - 为用户 user_ak12j77xw 创建新的ConversationBufferMemory
+2025-07-17 22:28:09,015 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:09] "GET /api/user/insights?user_id=user_ak12j77xw HTTP/1.1" 200 -
+2025-07-17 22:28:09,015 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:09] "GET /api/mood/history?user_id=user_ak12j77xw HTTP/1.1" 200 -
+2025-07-17 22:28:09,016 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:09] "GET /api/memory/summary?user_id=user_ak12j77xw HTTP/1.1" 200 -
+2025-07-17 22:28:19,491 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:28:19,497 - simple_flask_app - INFO - 用户 user_ak12j77xw 情绪分析完成: 惊讶
+2025-07-17 22:28:19,497 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:19] "POST /api/mood HTTP/1.1" 200 -
+2025-07-17 22:28:19,516 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:19] "GET /api/mood/history?user_id=user_ak12j77xw HTTP/1.1" 200 -
+2025-07-17 22:28:19,517 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:19] "GET /api/user/insights?user_id=user_ak12j77xw HTTP/1.1" 200 -
+2025-07-17 22:28:19,521 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:19] "GET /api/memory/summary?user_id=user_ak12j77xw HTTP/1.1" 200 -
+2025-07-17 22:28:24,576 - auto_projector - INFO - 
+==================== 第2轮分析 ====================
+2025-07-17 22:28:24,576 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 22:28:25,946 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:28:26,285 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 22:28:26,545 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 22:28:27,136 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:28:28,521 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:28:28,527 - auto_projector - INFO - ✅ 分析完成，关键词: ['无法提取音乐风格关键词。']
+2025-07-17 22:28:28,527 - auto_projector - INFO - 🎨 投影更新: ['无法提取音乐风格关键词。'] -> ['emotion1']
+2025-07-17 22:28:28,527 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (无法提取音乐风格关键词。)
+2025-07-17 22:28:28,527 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 22:28:28,527 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-17 22:28:29,346 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:28:29,346 - simple_flask_app - INFO - 用户 user_ak12j77xw 情绪分析完成: 平静
+2025-07-17 22:28:29,346 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:29] "POST /api/mood HTTP/1.1" 200 -
+2025-07-17 22:28:29,365 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:29] "GET /api/mood/history?user_id=user_ak12j77xw HTTP/1.1" 200 -
+2025-07-17 22:28:29,370 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:29] "GET /api/user/insights?user_id=user_ak12j77xw HTTP/1.1" 200 -
+2025-07-17 22:28:29,374 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:29] "GET /api/memory/summary?user_id=user_ak12j77xw HTTP/1.1" 200 -
+2025-07-17 22:28:37,903 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:28:37,906 - simple_flask_app - INFO - 用户 user_ak12j77xw 情绪分析完成: 兴奋
+2025-07-17 22:28:37,906 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:37] "POST /api/mood HTTP/1.1" 200 -
+2025-07-17 22:28:37,923 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:37] "GET /api/mood/history?user_id=user_ak12j77xw HTTP/1.1" 200 -
+2025-07-17 22:28:37,925 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:37] "GET /api/user/insights?user_id=user_ak12j77xw HTTP/1.1" 200 -
+2025-07-17 22:28:37,926 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:37] "GET /api/memory/summary?user_id=user_ak12j77xw HTTP/1.1" 200 -
+2025-07-17 22:28:49,697 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:28:49,697 - simple_flask_app - INFO - 用户 user_ak12j77xw 情绪分析完成: 开心
+2025-07-17 22:28:49,702 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:49] "POST /api/mood HTTP/1.1" 200 -
+2025-07-17 22:28:49,713 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:49] "GET /api/mood/history?user_id=user_ak12j77xw HTTP/1.1" 200 -
+2025-07-17 22:28:49,717 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:49] "GET /api/user/insights?user_id=user_ak12j77xw HTTP/1.1" 200 -
+2025-07-17 22:28:49,722 - werkzeug - INFO - 192.168.1.104 - - [17/Jul/2025 22:28:49] "GET /api/memory/summary?user_id=user_ak12j77xw HTTP/1.1" 200 -
+2025-07-17 22:28:58,707 - auto_projector - INFO - 
+==================== 第3轮分析 ====================
+2025-07-17 22:28:58,707 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-17 22:29:00,150 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:29:00,324 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-17 22:29:00,609 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-17 22:29:01,502 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:29:02,611 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-17 22:29:02,611 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-17 22:29:02,611 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-17 22:29:02,617 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-17 22:29:02,617 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-17 22:29:02,617 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-20 15:30:24,715 - root - INFO - ✅ 所有依赖检查完成
+2025-07-20 15:30:24,716 - __main__ - INFO - Web服务启动成功
+2025-07-20 15:30:24,717 - __main__ - INFO - 投影系统启动成功
+2025-07-20 15:30:28,535 - simple_flask_app - INFO - Azure OpenAI LLM 初始化成功
+2025-07-20 15:30:28,538 - root - INFO - 启动Web服务 http://0.0.0.0:5000
+2025-07-20 15:30:30,431 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-07-20 15:30:30,433 - werkzeug - INFO -  * Running on http://192.168.19.31:5000/ (Press CTRL+C to quit)
+2025-07-20 15:30:34,720 - root - INFO - 启动自动投影系统
+2025-07-20 15:30:35,564 - auto_projector - INFO -  自动投影系统启动: http://localhost:8080/color.html
+2025-07-20 15:30:35,567 - auto_projector - INFO - 🎨 已设置默认投影主题 - 投影仪将立即显示蓝色宁静效果
+2025-07-20 15:30:35,638 - werkzeug - INFO - 192.168.19.31 - - [20/Jul/2025 15:30:35] "GET / HTTP/1.1" 200 -
+2025-07-20 15:30:36,184 - werkzeug - INFO - 192.168.19.31 - - [20/Jul/2025 15:30:36] "GET /api/mood/history?user_id=user_4c8kn3lve HTTP/1.1" 200 -
+2025-07-20 15:30:36,185 - werkzeug - INFO - 192.168.19.31 - - [20/Jul/2025 15:30:36] "GET /api/user/insights?user_id=user_4c8kn3lve HTTP/1.1" 200 -
+2025-07-20 15:30:36,187 - werkzeug - INFO - 192.168.19.31 - - [20/Jul/2025 15:30:36] "GET /api/memory/summary?user_id=user_4c8kn3lve HTTP/1.1" 200 -
+2025-07-20 15:30:36,610 - werkzeug - INFO - 192.168.19.31 - - [20/Jul/2025 15:30:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-20 15:30:37,802 - auto_projector - INFO - 🌐 已自动打开投影页面: http://localhost:8080/color.html
+2025-07-20 15:30:38,578 - auto_projector - INFO - 🔄 开始持续分析，间隔30秒
+2025-07-20 15:30:38,578 - tools.registry - INFO - 图像分析工具注册成功
+2025-07-20 15:30:38,578 - tools.registry - INFO - 姿态分析工具注册成功
+2025-07-20 15:30:38,580 - main_agent - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-20 15:30:38,654 - auto_projector - INFO - ✅ LETDANCE工作流初始化成功
+2025-07-20 15:30:38,655 - auto_projector - INFO - 
+==================== 第1轮分析 ====================
+2025-07-20 15:30:38,655 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-20 15:30:40,058 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-20 15:30:40,193 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-20 15:30:40,478 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-20 15:30:41,072 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-20 15:30:42,426 - __main__ - INFO - 收到中断信号，正在关闭系统...
+2025-07-21 14:12:44,369 - root - INFO - ✅ 所有依赖检查完成
+2025-07-21 14:12:44,372 - __main__ - INFO - Web服务启动成功
+2025-07-21 14:12:44,372 - __main__ - INFO - 投影系统启动成功
+2025-07-21 14:12:47,622 - simple_flask_app - INFO - Azure OpenAI LLM 初始化成功
+2025-07-21 14:12:47,623 - root - INFO - 启动Web服务 http://0.0.0.0:5000
+2025-07-21 14:12:49,240 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-07-21 14:12:49,241 - werkzeug - INFO -  * Running on http://192.168.19.31:5000/ (Press CTRL+C to quit)
+2025-07-21 14:12:52,715 - root - INFO - 启动自动投影系统
+2025-07-21 14:12:53,549 - auto_projector - INFO -  自动投影系统启动: http://localhost:8080/color.html
+2025-07-21 14:12:53,551 - auto_projector - INFO - 🎨 已设置默认投影主题 - 投影仪将立即显示蓝色宁静效果
+2025-07-21 14:12:55,995 - auto_projector - INFO - 🌐 已自动打开投影页面: http://localhost:8080/color.html
+2025-07-21 14:12:56,563 - auto_projector - INFO - 🔄 开始持续分析，间隔30秒
+2025-07-21 14:12:56,564 - tools.registry - INFO - 图像分析工具注册成功
+2025-07-21 14:12:56,564 - tools.registry - INFO - 姿态分析工具注册成功
+2025-07-21 14:12:56,567 - main_agent - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-21 14:12:56,643 - auto_projector - INFO - ✅ LETDANCE工作流初始化成功
+2025-07-21 14:12:56,644 - auto_projector - INFO - 
+==================== 第1轮分析 ====================
+2025-07-21 14:12:56,645 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-21 14:12:58,382 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:12:58,516 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-21 14:12:58,878 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-21 14:12:59,485 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:13:01,108 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:13:01,117 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-21 14:13:01,118 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-21 14:13:01,118 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-21 14:13:01,118 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-21 14:13:01,119 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-21 14:13:02,788 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:02] "GET / HTTP/1.1" 200 -
+2025-07-21 14:13:05,220 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:05] "GET /api/user/insights?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:13:05,220 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:05] "GET /api/memory/summary?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:13:05,220 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:05] "GET /api/mood/history?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:13:05,340 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-21 14:13:19,885 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:13:19,889 - simple_flask_app - INFO - 用户 user_yh037n7pk 情绪分析完成: 愤怒
+2025-07-21 14:13:19,889 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:19] "POST /api/mood HTTP/1.1" 200 -
+2025-07-21 14:13:19,957 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:19] "GET /api/mood/history?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:13:19,969 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:19] "GET /api/user/insights?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:13:19,974 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:19] "GET /api/memory/summary?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:13:31,371 - auto_projector - INFO - 
+==================== 第2轮分析 ====================
+2025-07-21 14:13:31,371 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-21 14:13:31,626 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:13:31,630 - simple_flask_app - INFO - 用户 user_yh037n7pk 情绪分析完成: 开心
+2025-07-21 14:13:31,630 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:31] "POST /api/mood HTTP/1.1" 200 -
+2025-07-21 14:13:31,703 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:31] "GET /api/mood/history?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:13:31,703 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:31] "GET /api/user/insights?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:13:31,707 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:31] "GET /api/memory/summary?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:13:32,898 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:13:33,023 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-21 14:13:33,457 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-21 14:13:34,142 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:13:35,598 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:13:35,602 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-21 14:13:35,602 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-21 14:13:35,602 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-21 14:13:35,602 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-21 14:13:35,602 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-21 14:13:43,999 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:13:43,999 - simple_flask_app - INFO - 用户 user_yh037n7pk 情绪分析完成: 兴奋
+2025-07-21 14:13:44,002 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:44] "POST /api/mood HTTP/1.1" 200 -
+2025-07-21 14:13:44,077 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:44] "GET /api/mood/history?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:13:44,077 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:44] "GET /api/user/insights?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:13:44,081 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:13:44] "GET /api/memory/summary?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:14:05,846 - auto_projector - INFO - 
+==================== 第3轮分析 ====================
+2025-07-21 14:14:05,846 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-21 14:14:07,250 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:14:07,381 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-21 14:14:07,736 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-21 14:14:08,421 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:14:09,675 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:14:09,675 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-21 14:14:09,675 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-21 14:14:09,675 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-21 14:14:09,675 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-21 14:14:09,675 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-21 14:14:31,157 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:14:31,162 - simple_flask_app - INFO - 用户 user_yh037n7pk 情绪分析完成: 兴奋
+2025-07-21 14:14:31,162 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:14:31] "POST /api/mood HTTP/1.1" 200 -
+2025-07-21 14:14:31,242 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:14:31] "GET /api/mood/history?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:14:31,242 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:14:31] "GET /api/user/insights?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:14:31,243 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:14:31] "GET /api/memory/summary?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:14:37,387 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:14:37,387 - simple_flask_app - INFO - 用户 user_yh037n7pk 情绪分析完成: 平静
+2025-07-21 14:14:37,387 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:14:37] "POST /api/mood HTTP/1.1" 200 -
+2025-07-21 14:14:37,478 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:14:37] "GET /api/mood/history?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:14:37,482 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:14:37] "GET /api/user/insights?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:14:37,490 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:14:37] "GET /api/memory/summary?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:14:39,920 - auto_projector - INFO - 
+==================== 第4轮分析 ====================
+2025-07-21 14:14:39,920 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-21 14:14:41,304 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:14:41,304 - simple_flask_app - INFO - 用户 user_yh037n7pk 情绪分析完成: 悲伤
+2025-07-21 14:14:41,304 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:14:41] "POST /api/mood HTTP/1.1" 200 -
+2025-07-21 14:14:41,382 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:14:41] "GET /api/user/insights?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:14:41,386 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:14:41] "GET /api/mood/history?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:14:41,390 - werkzeug - INFO - 192.168.19.118 - - [21/Jul/2025 14:14:41] "GET /api/memory/summary?user_id=user_yh037n7pk HTTP/1.1" 200 -
+2025-07-21 14:15:07,317 - openai._base_client - INFO - Retrying request to /chat/completions in 0.474596 seconds
+2025-07-21 14:15:09,230 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:15:09,371 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-21 14:15:09,623 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-21 14:15:10,202 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:15:11,744 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:15:11,747 - auto_projector - INFO - ✅ 分析完成，关键词: ['无法提取音乐风格关键词。']
+2025-07-21 14:15:11,747 - auto_projector - INFO - 🎨 投影更新: ['无法提取音乐风格关键词。'] -> ['emotion1']
+2025-07-21 14:15:11,747 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (无法提取音乐风格关键词。)
+2025-07-21 14:15:11,747 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-21 14:15:11,747 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-21 14:15:14,305 - werkzeug - INFO - 192.168.19.31 - - [21/Jul/2025 14:15:14] "GET / HTTP/1.1" 200 -
+2025-07-21 14:15:14,876 - werkzeug - INFO - 192.168.19.31 - - [21/Jul/2025 14:15:14] "GET /api/mood/history?user_id=user_8u5nm46gd HTTP/1.1" 200 -
+2025-07-21 14:15:14,877 - werkzeug - INFO - 192.168.19.31 - - [21/Jul/2025 14:15:14] "GET /api/user/insights?user_id=user_8u5nm46gd HTTP/1.1" 200 -
+2025-07-21 14:15:14,880 - werkzeug - INFO - 192.168.19.31 - - [21/Jul/2025 14:15:14] "GET /api/memory/summary?user_id=user_8u5nm46gd HTTP/1.1" 200 -
+2025-07-21 14:15:15,249 - werkzeug - INFO - 192.168.19.31 - - [21/Jul/2025 14:15:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-21 14:15:20,601 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:15:20,601 - simple_flask_app - INFO - 用户 user_8u5nm46gd 情绪分析完成: 惊讶
+2025-07-21 14:15:20,601 - werkzeug - INFO - 192.168.19.31 - - [21/Jul/2025 14:15:20] "POST /api/mood HTTP/1.1" 200 -
+2025-07-21 14:15:20,618 - werkzeug - INFO - 192.168.19.31 - - [21/Jul/2025 14:15:20] "GET /api/mood/history?user_id=user_8u5nm46gd HTTP/1.1" 200 -
+2025-07-21 14:15:20,620 - werkzeug - INFO - 192.168.19.31 - - [21/Jul/2025 14:15:20] "GET /api/user/insights?user_id=user_8u5nm46gd HTTP/1.1" 200 -
+2025-07-21 14:15:20,625 - werkzeug - INFO - 192.168.19.31 - - [21/Jul/2025 14:15:20] "GET /api/memory/summary?user_id=user_8u5nm46gd HTTP/1.1" 200 -
+2025-07-21 14:15:25,609 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:15:25,611 - simple_flask_app - INFO - 用户 user_8u5nm46gd 情绪分析完成: 愤怒
+2025-07-21 14:15:25,611 - werkzeug - INFO - 192.168.19.31 - - [21/Jul/2025 14:15:25] "POST /api/mood HTTP/1.1" 200 -
+2025-07-21 14:15:25,628 - werkzeug - INFO - 192.168.19.31 - - [21/Jul/2025 14:15:25] "GET /api/memory/summary?user_id=user_8u5nm46gd HTTP/1.1" 200 -
+2025-07-21 14:15:25,632 - werkzeug - INFO - 192.168.19.31 - - [21/Jul/2025 14:15:25] "GET /api/user/insights?user_id=user_8u5nm46gd HTTP/1.1" 200 -
+2025-07-21 14:15:25,633 - werkzeug - INFO - 192.168.19.31 - - [21/Jul/2025 14:15:25] "GET /api/mood/history?user_id=user_8u5nm46gd HTTP/1.1" 200 -
+2025-07-21 14:15:41,965 - auto_projector - INFO - 
+==================== 第5轮分析 ====================
+2025-07-21 14:15:41,965 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-21 14:15:43,377 - __main__ - INFO - 收到中断信号，正在关闭系统...
+2025-07-21 14:22:36,144 - root - INFO - ✅ 所有依赖检查完成
+2025-07-21 14:22:36,144 - __main__ - INFO - Web服务启动成功
+2025-07-21 14:22:36,144 - __main__ - INFO - 投影系统启动成功
+2025-07-21 14:22:38,427 - simple_flask_app - INFO - Azure OpenAI LLM 初始化成功
+2025-07-21 14:22:38,431 - root - INFO - 启动Web服务 http://0.0.0.0:5000
+2025-07-21 14:22:39,771 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-07-21 14:22:39,771 - werkzeug - INFO -  * Running on http://192.168.19.31:5000/ (Press CTRL+C to quit)
+2025-07-21 14:22:40,854 - root - INFO - 启动自动投影系统
+2025-07-21 14:22:41,687 - auto_projector - INFO -  自动投影系统启动: http://localhost:8080/color.html
+2025-07-21 14:22:41,689 - auto_projector - INFO - 🎨 已设置默认投影主题 - 投影仪将立即显示蓝色宁静效果
+2025-07-21 14:22:43,944 - auto_projector - INFO - 🌐 已自动打开投影页面: http://localhost:8080/color.html
+2025-07-21 14:22:44,699 - auto_projector - INFO - 🔄 开始持续分析，间隔30秒
+2025-07-21 14:22:44,700 - tools.registry - INFO - 图像分析工具注册成功
+2025-07-21 14:22:44,701 - tools.registry - INFO - 姿态分析工具注册成功
+2025-07-21 14:22:44,703 - main_agent - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-21 14:22:44,791 - auto_projector - INFO - ✅ LETDANCE工作流初始化成功
+2025-07-21 14:22:44,792 - auto_projector - INFO - 
+==================== 第1轮分析 ====================
+2025-07-21 14:22:44,793 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-21 14:22:46,216 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:22:46,366 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-21 14:22:46,702 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-21 14:22:47,294 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:22:48,570 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:22:48,581 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-21 14:22:48,581 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-21 14:22:48,581 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-21 14:22:48,581 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-21 14:22:48,582 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-21 14:23:18,841 - auto_projector - INFO - 
+==================== 第2轮分析 ====================
+2025-07-21 14:23:18,842 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-21 14:23:20,204 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:23:20,332 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-21 14:23:20,602 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-21 14:23:21,165 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:23:23,218 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:23:23,219 - auto_projector - INFO - ✅ 分析完成，关键词: ['抱歉，分析结果中未包含音乐风格相关信息，无法提取有效关键词。']
+2025-07-21 14:23:23,221 - auto_projector - INFO - 🎨 投影更新: ['抱歉，分析结果中未包含音乐风格相关信息，无法提取有效关键词。'] -> ['emotion1']
+2025-07-21 14:23:23,221 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (抱歉，分析结果中未包含音乐风格相关信息，无法提取有效关键词。)
+2025-07-21 14:23:23,221 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-21 14:23:23,222 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-21 14:26:50,401 - root - INFO - 创建目录: D:\GitHub\LETDANCE\generated_music
+2025-07-21 14:26:50,401 - root - INFO - ✅ 所有依赖检查完成
+2025-07-21 14:26:50,403 - __main__ - INFO - Web服务启动成功
+2025-07-21 14:26:50,403 - __main__ - INFO - 投影系统启动成功
+2025-07-21 14:26:50,405 - __main__ - INFO - 音乐生成模块启动成功
+2025-07-21 14:26:52,499 - simple_flask_app - INFO - Azure OpenAI LLM 初始化成功
+2025-07-21 14:26:52,503 - root - INFO - 启动Web服务 http://0.0.0.0:5000
+2025-07-21 14:26:53,865 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-07-21 14:26:53,866 - werkzeug - INFO -  * Running on http://192.168.19.31:5000/ (Press CTRL+C to quit)
+2025-07-21 14:26:54,162 - root - INFO - 启动自动投影系统
+2025-07-21 14:26:55,005 - auto_projector - INFO -  自动投影系统启动: http://localhost:8080/color.html
+2025-07-21 14:26:55,007 - auto_projector - INFO - 🎨 已设置默认投影主题 - 投影仪将立即显示蓝色宁静效果
+2025-07-21 14:26:55,502 - __main__ - INFO - 开始生成音乐，关键词: upbeat, energetic, dance, electronic
+2025-07-21 14:26:57,257 - auto_projector - INFO - 🌐 已自动打开投影页面: http://localhost:8080/color.html
+2025-07-21 14:26:58,018 - auto_projector - INFO - 🔄 开始持续分析，间隔30秒
+2025-07-21 14:26:58,018 - tools.registry - INFO - 图像分析工具注册成功
+2025-07-21 14:26:58,018 - tools.registry - INFO - 姿态分析工具注册成功
+2025-07-21 14:26:58,020 - main_agent - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-21 14:26:58,082 - auto_projector - INFO - ✅ LETDANCE工作流初始化成功
+2025-07-21 14:26:58,082 - auto_projector - INFO - 
+==================== 第1轮分析 ====================
+2025-07-21 14:26:58,082 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-21 14:27:25,658 - openai._base_client - INFO - Retrying request to /chat/completions in 0.482157 seconds
+2025-07-21 14:27:27,560 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:27:27,771 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-21 14:27:28,094 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-21 14:27:28,661 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:27:29,876 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:27:29,889 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-21 14:27:29,890 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-21 14:27:29,890 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-21 14:27:29,890 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-21 14:27:29,890 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-21 14:27:51,541 - __main__ - INFO - 音乐生成成功: generated_music\music_20250721_142751.wav
+2025-07-21 14:27:51,541 - microphone - INFO - 异步播放线程开始播放: generated_music\music_20250721_142751.wav
+2025-07-21 14:27:51,541 - microphone - INFO -  异步音频播放线程已启动，文件: generated_music\music_20250721_142751.wav
+2025-07-21 14:27:51,545 - microphone - INFO - 开始播放音频: generated_music\music_20250721_142751.wav
+2025-07-21 14:27:51,545 - __main__ - INFO - 音乐开始播放
+2025-07-21 14:27:51,545 - microphone - ERROR - 检测音频设备失败: [WinError 2] 系统找不到指定的文件。
+2025-07-21 14:27:51,549 - microphone - INFO - 尝试使用aplay播放...
+2025-07-21 14:27:51,549 - microphone - INFO - 使用aplay播放: aplay generated_music\music_20250721_142751.wav
+2025-07-21 14:27:51,554 - microphone - ERROR - aplay播放异常: [WinError 2] 系统找不到指定的文件。
+2025-07-21 14:27:51,555 - microphone - INFO - 尝试使用aplay指定设备播放...
+2025-07-21 14:27:51,555 - microphone - INFO - 使用aplay播放: aplay -D hw:0,0 generated_music\music_20250721_142751.wav
+2025-07-21 14:27:51,561 - microphone - ERROR - aplay播放异常: [WinError 2] 系统找不到指定的文件。
+2025-07-21 14:27:51,562 - microphone - INFO - 尝试使用omxplayer播放...
+2025-07-21 14:27:51,563 - microphone - INFO - 使用omxplayer播放: omxplayer --no-keys generated_music\music_20250721_142751.wav
+2025-07-21 14:27:51,567 - microphone - ERROR - omxplayer播放异常: [WinError 2] 系统找不到指定的文件。
+2025-07-21 14:27:51,567 - microphone - INFO - 尝试使用pygame播放...
+2025-07-21 14:27:54,052 - microphone - INFO - pygame开始播放音频: generated_music\music_20250721_142751.wav
+2025-07-21 14:28:00,078 - auto_projector - INFO - 
+==================== 第2轮分析 ====================
+2025-07-21 14:28:00,079 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-21 14:28:01,689 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:28:01,743 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-21 14:28:01,975 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-21 14:28:02,559 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-21 14:28:06,798 - __main__ - INFO - 收到中断信号，正在关闭系统...
+2025-07-21 14:28:06,889 - microphone - ERROR - pygame播放失败: mixer not initialized
+2025-07-21 14:28:06,889 - microphone - ERROR - 所有播放方式都失败了
+2025-07-21 14:28:06,890 - microphone - ERROR - 异步音频播放失败
+2025-07-24 21:38:16,453 - root - INFO - ✅ 所有依赖检查完成
+2025-07-24 21:38:16,453 - tools.registry - INFO - 图像分析工具注册成功
+2025-07-24 21:38:16,454 - tools.registry - INFO - 姿态分析工具注册成功
+2025-07-24 21:38:16,456 - root - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-24 21:38:16,780 - root - INFO - 智能分析工作流初始化成功
+2025-07-24 21:38:16,784 - __main__ - INFO - Web服务启动成功
+2025-07-24 21:38:16,785 - __main__ - INFO - 投影系统启动成功
+2025-07-24 21:38:16,785 - __main__ - INFO - 智能分析工作流已就绪
+2025-07-24 21:38:16,796 - root - INFO - 启动自动投影系统
+2025-07-24 21:38:16,853 - auto_projector - INFO -  自动投影系统启动: http://localhost:8080/color.html
+2025-07-24 21:38:16,854 - auto_projector - INFO - 🎨 已设置默认投影主题 - 投影仪将立即显示蓝色宁静效果
+2025-07-24 21:38:17,284 - simple_flask_app - INFO - Azure OpenAI LLM 初始化成功
+2025-07-24 21:38:17,289 - root - INFO - 启动Web服务 http://0.0.0.0:5000
+2025-07-24 21:38:17,299 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-07-24 21:38:17,300 - werkzeug - INFO -  * Running on http://30.201.222.75:5000/ (Press CTRL+C to quit)
+2025-07-24 21:38:19,157 - auto_projector - INFO - 🌐 已自动打开投影页面: http://localhost:8080/color.html
+2025-07-24 21:38:19,862 - auto_projector - INFO - 🔄 开始持续分析，间隔30秒
+2025-07-24 21:38:19,863 - main_agent - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-24 21:38:19,904 - auto_projector - INFO - ✅ LETDANCE工作流初始化成功
+2025-07-24 21:38:19,905 - auto_projector - INFO - 
+==================== 第1轮分析 ====================
+2025-07-24 21:38:19,905 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:38:22,391 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:38:22,544 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:38:23,170 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:38:23,976 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:38:26,194 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:38:26,221 - auto_projector - INFO - ✅ 分析完成，关键词: ['抱歉，分析结果中没有包含任何音乐风格信息，无法提取音乐风格关键词。']
+2025-07-24 21:38:26,222 - auto_projector - INFO - 🎨 投影更新: ['抱歉，分析结果中没有包含任何音乐风格信息，无法提取音乐风格关键词。'] -> ['emotion1']
+2025-07-24 21:38:26,222 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (抱歉，分析结果中没有包含任何音乐风格信息，无法提取音乐风格关键词。)
+2025-07-24 21:38:26,222 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:38:26,223 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:38:56,409 - auto_projector - INFO - 
+==================== 第2轮分析 ====================
+2025-07-24 21:38:56,410 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:38:58,466 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:38:58,818 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:38:59,258 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:38:59,867 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:39:00,800 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:39:00,803 - auto_projector - INFO - ✅ 分析完成，关键词: ['无法提取音乐风格关键词。']
+2025-07-24 21:39:00,805 - auto_projector - INFO - 🎨 投影更新: ['无法提取音乐风格关键词。'] -> ['emotion1']
+2025-07-24 21:39:00,805 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (无法提取音乐风格关键词。)
+2025-07-24 21:39:00,806 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:39:00,806 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:39:31,043 - auto_projector - INFO - 
+==================== 第3轮分析 ====================
+2025-07-24 21:39:31,046 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:39:33,059 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:39:33,307 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:39:34,063 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:39:34,699 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:39:36,076 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:39:36,080 - auto_projector - INFO - ✅ 分析完成，关键词: ['无法提取音乐风格关键词。']
+2025-07-24 21:39:36,081 - auto_projector - INFO - 🎨 投影更新: ['无法提取音乐风格关键词。'] -> ['emotion1']
+2025-07-24 21:39:36,082 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (无法提取音乐风格关键词。)
+2025-07-24 21:39:36,082 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:39:36,083 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:39:51,276 - __main__ - INFO - 收到中断信号，正在关闭系统...
+2025-07-24 21:40:31,304 - root - INFO - ✅ 所有依赖检查完成
+2025-07-24 21:40:31,305 - tools.registry - INFO - 图像分析工具注册成功
+2025-07-24 21:40:31,305 - tools.registry - INFO - 姿态分析工具注册成功
+2025-07-24 21:40:31,306 - root - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-24 21:40:31,470 - root - INFO - 智能分析工作流初始化成功
+2025-07-24 21:40:31,471 - __main__ - INFO - Web服务启动成功
+2025-07-24 21:40:31,472 - __main__ - INFO - 投影系统启动成功
+2025-07-24 21:40:31,472 - __main__ - INFO - 智能分析工作流已就绪
+2025-07-24 21:40:31,479 - root - INFO - 启动自动投影系统
+2025-07-24 21:40:31,499 - auto_projector - INFO -  自动投影系统启动: http://localhost:8080/color.html
+2025-07-24 21:40:31,504 - auto_projector - INFO - 🎨 已设置默认投影主题 - 投影仪将立即显示蓝色宁静效果
+2025-07-24 21:40:31,639 - simple_flask_app - INFO - Azure OpenAI LLM 初始化成功
+2025-07-24 21:40:31,643 - root - INFO - 启动Web服务 http://0.0.0.0:5000
+2025-07-24 21:40:31,651 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-07-24 21:40:31,652 - werkzeug - INFO -  * Running on http://30.201.222.75:5000/ (Press CTRL+C to quit)
+2025-07-24 21:40:33,884 - auto_projector - INFO - 🌐 已自动打开投影页面: http://localhost:8080/color.html
+2025-07-24 21:40:34,512 - auto_projector - INFO - 🔄 开始持续分析，间隔30秒
+2025-07-24 21:40:34,513 - main_agent - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-24 21:40:34,579 - auto_projector - INFO - ✅ LETDANCE工作流初始化成功
+2025-07-24 21:40:34,579 - auto_projector - INFO - 
+==================== 第1轮分析 ====================
+2025-07-24 21:40:34,580 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:40:36,131 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:40:36,299 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:40:36,759 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:40:37,336 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:40:38,323 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:40:38,333 - auto_projector - INFO - ✅ 分析完成，关键词: ['无法提取']
+2025-07-24 21:40:38,333 - auto_projector - INFO - 🎨 投影更新: ['无法提取'] -> ['emotion1']
+2025-07-24 21:40:38,333 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (无法提取)
+2025-07-24 21:40:38,334 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:40:38,334 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:40:58,045 - __main__ - INFO - 收到中断信号，正在关闭系统...
+2025-07-24 21:42:41,150 - root - INFO - ✅ 所有依赖检查完成
+2025-07-24 21:42:41,151 - tools.registry - INFO - 图像分析工具注册成功
+2025-07-24 21:42:41,151 - tools.registry - INFO - 姿态分析工具注册成功
+2025-07-24 21:42:41,152 - root - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-24 21:42:41,336 - root - INFO - 智能分析工作流初始化成功
+2025-07-24 21:42:41,337 - __main__ - INFO - Web服务启动成功
+2025-07-24 21:42:41,338 - __main__ - INFO - 投影系统启动成功
+2025-07-24 21:42:41,338 - __main__ - INFO - 智能分析工作流已就绪
+2025-07-24 21:42:41,351 - root - INFO - 启动自动投影系统
+2025-07-24 21:42:41,368 - auto_projector - INFO -  自动投影系统启动: http://localhost:8080/color.html
+2025-07-24 21:42:41,369 - auto_projector - INFO - 🎨 已设置默认投影主题 - 投影仪将立即显示蓝色宁静效果
+2025-07-24 21:42:41,520 - simple_flask_app - INFO - Azure OpenAI LLM 初始化成功
+2025-07-24 21:42:41,524 - root - INFO - 启动Web服务 http://0.0.0.0:5000
+2025-07-24 21:42:41,531 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-07-24 21:42:41,531 - werkzeug - INFO -  * Running on http://30.201.222.75:5000/ (Press CTRL+C to quit)
+2025-07-24 21:42:43,606 - auto_projector - INFO - 🌐 已自动打开投影页面: http://localhost:8080/color.html
+2025-07-24 21:42:44,379 - auto_projector - INFO - 🔄 开始持续分析，间隔30秒
+2025-07-24 21:42:44,381 - main_agent - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-24 21:42:44,451 - auto_projector - INFO - ✅ LETDANCE工作流初始化成功
+2025-07-24 21:42:44,451 - auto_projector - INFO - 
+==================== 第1轮分析 ====================
+2025-07-24 21:42:44,452 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:42:46,032 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:42:46,177 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:42:46,655 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:42:47,288 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:42:48,602 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:42:48,618 - auto_projector - INFO - ✅ 分析完成，关键词: ['无法提取音乐风格关键词。']
+2025-07-24 21:42:48,619 - auto_projector - INFO - 🎨 投影更新: ['无法提取音乐风格关键词。'] -> ['emotion1']
+2025-07-24 21:42:48,620 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (无法提取音乐风格关键词。)
+2025-07-24 21:42:48,620 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:42:48,621 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:43:18,894 - auto_projector - INFO - 
+==================== 第2轮分析 ====================
+2025-07-24 21:43:18,895 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:43:20,379 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:43:20,503 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:43:20,898 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:43:21,444 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:43:23,024 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:43:23,026 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-24 21:43:23,027 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-24 21:43:23,027 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-24 21:43:23,027 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:43:23,027 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:43:46,840 - __main__ - INFO - 收到中断信号，正在关闭系统...
+2025-07-24 21:47:16,783 - root - INFO - ✅ 所有依赖检查完成
+2025-07-24 21:47:16,783 - tools.registry - INFO - 图像分析工具注册成功
+2025-07-24 21:47:16,783 - tools.registry - INFO - 姿态分析工具注册成功
+2025-07-24 21:47:16,785 - root - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-24 21:47:16,970 - root - INFO - 智能分析工作流初始化成功
+2025-07-24 21:47:16,971 - __main__ - INFO - Web服务启动成功
+2025-07-24 21:47:16,972 - __main__ - INFO - 投影系统启动成功
+2025-07-24 21:47:16,973 - __main__ - INFO - 智能分析工作流已就绪
+2025-07-24 21:47:16,981 - root - INFO - 启动自动投影系统
+2025-07-24 21:47:16,989 - auto_projector - INFO -  自动投影系统启动: http://localhost:8080/color.html
+2025-07-24 21:47:16,993 - auto_projector - INFO - 🎨 已设置默认投影主题 - 投影仪将立即显示蓝色宁静效果
+2025-07-24 21:47:19,240 - auto_projector - INFO - 🌐 已自动打开投影页面: http://localhost:8080/color.html
+2025-07-24 21:47:20,005 - auto_projector - INFO - 🔄 开始持续分析，间隔30秒
+2025-07-24 21:47:20,006 - main_agent - INFO - 初始化Azure OpenAI LLM，部署名称: gpt-4.1
+2025-07-24 21:47:20,058 - auto_projector - INFO - ✅ LETDANCE工作流初始化成功
+2025-07-24 21:47:20,058 - auto_projector - INFO - 
+==================== 第1轮分析 ====================
+2025-07-24 21:47:20,058 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:47:22,049 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:47:22,213 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:47:22,600 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:47:23,197 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:47:24,664 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:47:24,702 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-24 21:47:24,704 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-24 21:47:24,706 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-24 21:47:24,707 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:47:24,708 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:47:54,969 - auto_projector - INFO - 
+==================== 第2轮分析 ====================
+2025-07-24 21:47:54,970 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:47:56,615 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:47:56,806 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:47:57,446 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:47:58,133 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:47:59,246 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:47:59,248 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-24 21:47:59,248 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-24 21:47:59,249 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-24 21:47:59,249 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:47:59,250 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:48:29,507 - auto_projector - INFO - 
+==================== 第3轮分析 ====================
+2025-07-24 21:48:29,507 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:48:31,131 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:48:31,325 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:48:31,742 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:48:32,478 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:48:34,079 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:48:34,081 - auto_projector - INFO - ✅ 分析完成，关键词: ['无法提取音乐风格关键词。']
+2025-07-24 21:48:34,081 - auto_projector - INFO - 🎨 投影更新: ['无法提取音乐风格关键词。'] -> ['emotion1']
+2025-07-24 21:48:34,081 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (无法提取音乐风格关键词。)
+2025-07-24 21:48:34,082 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:48:34,082 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:49:04,314 - auto_projector - INFO - 
+==================== 第4轮分析 ====================
+2025-07-24 21:49:04,314 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:49:05,936 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:49:06,122 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:49:06,730 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:49:07,415 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:49:08,656 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:49:08,659 - auto_projector - INFO - ✅ 分析完成，关键词: ['抱歉，提供的分析结果中没有任何与音乐风格相关的信息，因此无法提取音乐风格关键词。']
+2025-07-24 21:49:08,660 - auto_projector - INFO - 🎨 投影更新: ['抱歉，提供的分析结果中没有任何与音乐风格相关的信息，因此无法提取音乐风格关键词。'] -> ['emotion1']
+2025-07-24 21:49:08,660 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (抱歉，提供的分析结果中没有任何与音乐风格相关的信息，因此无法提取音乐风格关键词。)
+2025-07-24 21:49:08,661 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:49:08,661 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:49:38,947 - auto_projector - INFO - 
+==================== 第5轮分析 ====================
+2025-07-24 21:49:38,948 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:49:40,531 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:49:40,695 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:49:41,329 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:49:41,982 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:49:43,156 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:49:43,158 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-24 21:49:43,158 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-24 21:49:43,158 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-24 21:49:43,159 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:49:43,159 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:50:13,457 - auto_projector - INFO - 
+==================== 第6轮分析 ====================
+2025-07-24 21:50:13,458 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:50:15,018 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:50:15,154 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:50:15,547 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:50:16,125 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:50:17,757 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:50:17,760 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-24 21:50:17,761 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-24 21:50:17,763 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-24 21:50:17,764 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:50:17,764 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:50:48,029 - auto_projector - INFO - 
+==================== 第7轮分析 ====================
+2025-07-24 21:50:48,030 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:50:49,461 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:50:49,623 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:50:50,087 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:50:50,706 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:50:52,363 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:50:52,365 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-24 21:50:52,365 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-24 21:50:52,366 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-24 21:50:52,366 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:50:52,366 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:51:22,695 - auto_projector - INFO - 
+==================== 第8轮分析 ====================
+2025-07-24 21:51:22,697 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:51:24,318 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:51:24,592 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:51:24,958 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:51:25,549 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:51:26,763 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:51:26,765 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-24 21:51:26,765 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-24 21:51:26,765 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-24 21:51:26,766 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:51:26,766 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:51:57,020 - auto_projector - INFO - 
+==================== 第9轮分析 ====================
+2025-07-24 21:51:57,020 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:51:58,587 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:51:58,742 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:51:59,198 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:51:59,834 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:52:01,070 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:52:01,070 - auto_projector - INFO - ✅ 分析完成，关键词: ['Sorry', 'no valid analysis data provided.']
+2025-07-24 21:52:01,071 - auto_projector - INFO - 🎨 投影更新: ['Sorry', 'no valid analysis data provided.'] -> ['emotion1']
+2025-07-24 21:52:01,071 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (no valid analysis data provided.)
+2025-07-24 21:52:01,071 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:52:01,071 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:52:31,385 - auto_projector - INFO - 
+==================== 第10轮分析 ====================
+2025-07-24 21:52:31,386 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:52:32,909 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:52:33,066 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:52:33,479 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:52:34,055 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:52:36,402 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:52:36,404 - auto_projector - INFO - ✅ 分析完成，关键词: ['抱歉，分析结果中没有涉及任何音乐风格相关的信息，因此无法提取音乐风格关键词。']
+2025-07-24 21:52:36,405 - auto_projector - INFO - 🎨 投影更新: ['抱歉，分析结果中没有涉及任何音乐风格相关的信息，因此无法提取音乐风格关键词。'] -> ['emotion1']
+2025-07-24 21:52:36,405 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (抱歉，分析结果中没有涉及任何音乐风格相关的信息，因此无法提取音乐风格关键词。)
+2025-07-24 21:52:36,405 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:52:36,406 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:53:06,725 - auto_projector - INFO - 
+==================== 第11轮分析 ====================
+2025-07-24 21:53:06,725 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:53:08,233 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:53:08,383 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:53:08,751 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:53:09,339 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:53:10,437 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:53:10,440 - auto_projector - INFO - ✅ 分析完成，关键词: ['无法提取音乐风格关键词。']
+2025-07-24 21:53:10,440 - auto_projector - INFO - 🎨 投影更新: ['无法提取音乐风格关键词。'] -> ['emotion1']
+2025-07-24 21:53:10,440 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (无法提取音乐风格关键词。)
+2025-07-24 21:53:10,441 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:53:10,441 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:53:40,770 - auto_projector - INFO - 
+==================== 第12轮分析 ====================
+2025-07-24 21:53:40,770 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:53:42,542 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:53:42,693 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:53:43,210 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:53:43,790 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:53:45,022 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:53:45,023 - auto_projector - INFO - ✅ 分析完成，关键词: ['无法提取。']
+2025-07-24 21:53:45,025 - auto_projector - INFO - 🎨 投影更新: ['无法提取。'] -> ['emotion1']
+2025-07-24 21:53:45,025 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (无法提取。)
+2025-07-24 21:53:45,025 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:53:45,025 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:54:15,338 - auto_projector - INFO - 
+==================== 第13轮分析 ====================
+2025-07-24 21:54:15,339 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:54:16,935 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:54:17,071 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:54:17,547 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:54:18,127 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:54:19,898 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:54:19,900 - auto_projector - INFO - ✅ 分析完成，关键词: ['抱歉，无法提取音乐风格关键词。']
+2025-07-24 21:54:19,901 - auto_projector - INFO - 🎨 投影更新: ['抱歉，无法提取音乐风格关键词。'] -> ['emotion1']
+2025-07-24 21:54:19,902 - auto_projector - INFO - 🎯 主要投影主题: 充满活力 (抱歉，无法提取音乐风格关键词。)
+2025-07-24 21:54:19,902 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:54:19,903 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:54:50,180 - auto_projector - INFO - 
+==================== 第14轮分析 ====================
+2025-07-24 21:54:50,181 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:54:51,893 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:54:52,044 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:54:52,443 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:54:53,046 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:54:54,252 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:54:54,254 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-24 21:54:54,255 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-24 21:54:54,256 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-24 21:54:54,256 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:54:54,256 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...
+2025-07-24 21:55:24,554 - auto_projector - INFO - 
+==================== 第15轮分析 ====================
+2025-07-24 21:55:24,555 - main_agent - INFO - 开始LETDANCE分析流程
+2025-07-24 21:55:26,193 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:55:26,306 - tools.image_analysis_tool - INFO - 执行图像分析操作: capture_and_analyze
+2025-07-24 21:55:26,729 - tools.image_analysis_tool - ERROR - 所有摄像头都无法用于拍照
+2025-07-24 21:55:27,387 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:55:28,618 - httpx - INFO - HTTP Request: POST https://ai-philxia4932ai122623990161.openai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-07-24 21:55:28,621 - auto_projector - INFO - ✅ 分析完成，关键词: ['ambient', 'emotional', 'energetic', 'peaceful']
+2025-07-24 21:55:28,622 - auto_projector - INFO - 🎨 投影更新: ['ambient', 'emotional', 'energetic', 'peaceful'] -> ['emotion2', 'emotion3', 'emotion1']
+2025-07-24 21:55:28,622 - auto_projector - INFO - 🎯 主要投影主题: 宁静舒缓 (peaceful)
+2025-07-24 21:55:28,623 - auto_projector - INFO - 🎨 投影效果已自动更新
+2025-07-24 21:55:28,623 - auto_projector - INFO - ⏳ 等待30秒后进行下一轮分析...

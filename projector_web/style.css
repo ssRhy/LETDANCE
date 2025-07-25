@@ -1,0 +1,648 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Microsoft YaHei", "SimSun", sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  background: #000;
+}
+
+/* 全屏投影容器 */
+.color-display {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 2s ease;
+  cursor: none;
+}
+
+/* 投影显示区域 - 全屏设计 */
+
+.current-emotion {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  z-index: 100;
+  transition: all 1s ease;
+  text-align: center;
+}
+
+/* 粒子效果 */
+.color-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* 情绪主题样式 */
+
+/* 情绪1：快乐/兴奋 - 暖色调 */
+.emotion-theme-1 {
+  background: radial-gradient(
+      ellipse at 25% 25%,
+      rgba(255, 154, 86, 0.9) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 75% 75%,
+      rgba(255, 107, 157, 0.8) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 50% 10%,
+      rgba(240, 147, 251, 0.7) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 80% 30%,
+      rgba(255, 195, 113, 0.6) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 20% 80%,
+      rgba(255, 159, 124, 0.5) 0%,
+      transparent 45%
+    ),
+    conic-gradient(
+      from 45deg,
+      #ff9a56,
+      #ff6b9d,
+      #f093fb,
+      #ffd89b,
+      #ff416c,
+      #ff9a56
+    ),
+    linear-gradient(
+      135deg,
+      #ff9a56 0%,
+      #ff6b9d 25%,
+      #f093fb 50%,
+      #ffd89b 75%,
+      #ffb347 100%
+    );
+  animation: warmGlow 6s ease-in-out infinite alternate,
+    lightShift 8s ease-in-out infinite;
+  filter: blur(0.5px);
+}
+
+@keyframes warmGlow {
+  0% {
+    filter: hue-rotate(0deg) brightness(1.2) contrast(1.3) saturate(1.4)
+      blur(0.5px);
+    transform: scale(1);
+  }
+  100% {
+    filter: hue-rotate(30deg) brightness(1.5) contrast(1.6) saturate(1.7)
+      blur(1px);
+    transform: scale(1.03);
+  }
+}
+
+@keyframes lightShift {
+  0% {
+    background-position: 0% 0%, 100% 100%, 50% 0%, 80% 30%, 20% 80%, 0% 0%,
+      0% 0%;
+  }
+  25% {
+    background-position: 25% 15%, 75% 85%, 65% 25%, 65% 45%, 35% 65%, 90deg 25%,
+      25% 25%;
+  }
+  50% {
+    background-position: 50% 30%, 50% 70%, 80% 50%, 50% 60%, 50% 50%, 180deg 50%,
+      50% 50%;
+  }
+  75% {
+    background-position: 75% 45%, 25% 55%, 95% 75%, 35% 75%, 65% 35%, 270deg 75%,
+      75% 75%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 100%, 50% 0%, 80% 30%, 20% 80%, 0% 0%,
+      0% 0%;
+  }
+}
+
+.emotion-theme-1 .current-emotion {
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 107, 157, 1), 0 0 40px rgba(255, 154, 86, 0.8),
+    0 0 60px rgba(240, 147, 251, 0.6), 0 0 80px rgba(255, 195, 113, 0.4),
+    0 0 100px rgba(255, 159, 124, 0.3);
+  filter: drop-shadow(0 0 15px rgba(255, 107, 157, 0.8));
+  animation: textShimmer 3s ease-in-out infinite;
+}
+
+@keyframes textShimmer {
+  0%,
+  100% {
+    text-shadow: 0 0 20px rgba(255, 107, 157, 1),
+      0 0 40px rgba(255, 154, 86, 0.8), 0 0 60px rgba(240, 147, 251, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(255, 154, 86, 1),
+      0 0 50px rgba(240, 147, 251, 0.9), 0 0 70px rgba(255, 107, 157, 0.7);
+  }
+}
+
+.emotion-theme-1 .particle {
+  background: radial-gradient(
+      circle,
+      rgba(255, 107, 157, 0.9) 0%,
+      rgba(255, 154, 86, 0.7) 40%,
+      transparent 70%
+    ),
+    radial-gradient(circle, rgba(240, 147, 251, 0.8) 20%, transparent 80%);
+  animation: float 4s infinite ease-in-out, pulse 2s infinite ease-in-out,
+    sparkle 3s infinite ease-in-out;
+  filter: blur(0.5px);
+  box-shadow: 0 0 10px rgba(255, 107, 157, 0.6);
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(255, 107, 157, 0.8);
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 154, 86, 1),
+      0 0 30px rgba(240, 147, 251, 0.6);
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* 情绪2：平静/宁静 - 冷色调 */
+.emotion-theme-2 {
+  background: radial-gradient(
+      ellipse at 20% 20%,
+      rgba(79, 172, 254, 0.9) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 80% 60%,
+      rgba(0, 242, 254, 0.8) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 40% 80%,
+      rgba(168, 237, 234, 0.7) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 70% 20%,
+      rgba(102, 204, 255, 0.6) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 10% 70%,
+      rgba(135, 206, 250, 0.5) 0%,
+      transparent 35%
+    ),
+    conic-gradient(
+      from 180deg,
+      #4facfe,
+      #00f2fe,
+      #a8edea,
+      #87ceeb,
+      #66ccff,
+      #4facfe
+    ),
+    linear-gradient(
+      225deg,
+      #4facfe 0%,
+      #00f2fe 30%,
+      #a8edea 60%,
+      #87ceeb 85%,
+      #66ccff 100%
+    );
+  animation: calmFlow 5s ease-in-out infinite alternate,
+    oceanWave 7s ease-in-out infinite;
+  filter: blur(0.2px);
+}
+
+@keyframes calmFlow {
+  0% {
+    filter: hue-rotate(0deg) brightness(1.3) contrast(1.5) saturate(1.6)
+      blur(0.2px);
+    transform: scale(1);
+  }
+  100% {
+    filter: hue-rotate(-35deg) brightness(0.8) contrast(1.8) saturate(2)
+      blur(1.2px);
+    transform: scale(1.06);
+  }
+}
+
+@keyframes oceanWave {
+  0% {
+    background-position: 0% 0%, 100% 100%, 50% 100%, 80% 20%, 10% 70%, 0% 0%,
+      0% 0%;
+  }
+  25% {
+    background-position: 50% 30%, 50% 70%, 80% 60%, 60% 60%, 40% 40%, 90deg 25%,
+      25% 25%;
+  }
+  50% {
+    background-position: 100% 60%, 0% 40%, 100% 20%, 40% 100%, 60% 20%,
+      180deg 50%, 50% 50%;
+  }
+  75% {
+    background-position: 50% 90%, 50% 10%, 20% 80%, 20% 40%, 80% 60%, 270deg 75%,
+      75% 75%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 100%, 50% 100%, 80% 20%, 10% 70%, 0% 0%,
+      0% 0%;
+  }
+}
+
+.emotion-theme-2 .current-emotion {
+  color: #fff;
+  text-shadow: 0 0 30px rgba(0, 242, 254, 1), 0 0 60px rgba(79, 172, 254, 0.9),
+    0 0 90px rgba(168, 237, 234, 0.7), 0 0 120px rgba(102, 204, 255, 0.5),
+    0 0 150px rgba(135, 206, 250, 0.4);
+  filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.8));
+  animation: calmShimmer 3s ease-in-out infinite;
+}
+
+@keyframes calmShimmer {
+  0%,
+  100% {
+    text-shadow: 0 0 30px rgba(0, 242, 254, 1), 0 0 60px rgba(79, 172, 254, 0.9),
+      0 0 90px rgba(168, 237, 234, 0.7);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    text-shadow: 0 0 50px rgba(79, 172, 254, 1), 0 0 80px rgba(168, 237, 234, 1),
+      0 0 110px rgba(0, 242, 254, 0.8);
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+.emotion-theme-2 .particle {
+  background: radial-gradient(
+      circle,
+      rgba(0, 242, 254, 0.9) 0%,
+      rgba(79, 172, 254, 0.7) 40%,
+      transparent 70%
+    ),
+    radial-gradient(circle, rgba(168, 237, 234, 0.8) 20%, transparent 80%);
+  animation: float 6s infinite ease-in-out, pulse 2s infinite ease-in-out,
+    ripple 3s infinite ease-in-out;
+  filter: blur(0.2px);
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.7);
+}
+
+@keyframes ripple {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(0, 242, 254, 0.8);
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(79, 172, 254, 1),
+      0 0 45px rgba(168, 237, 234, 0.7);
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* 情绪3：悲伤/忧郁 - 深色调 */
+.emotion-theme-3 {
+  background: radial-gradient(
+      ellipse at 60% 30%,
+      rgba(102, 126, 234, 0.7) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 30% 70%,
+      rgba(118, 75, 162, 0.8) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 80%,
+      rgba(44, 62, 80, 0.6) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 20% 20%,
+      rgba(79, 91, 161, 0.5) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 90% 40%,
+      rgba(93, 109, 126, 0.4) 0%,
+      transparent 35%
+    ),
+    conic-gradient(
+      from 270deg,
+      #667eea,
+      #764ba2,
+      #2c3e50,
+      #4f5ba1,
+      #5d6d7e,
+      #667eea
+    ),
+    linear-gradient(
+      315deg,
+      #667eea 0%,
+      #764ba2 40%,
+      #2c3e50 70%,
+      #4f5ba1 90%,
+      #5d6d7e 100%
+    );
+  animation: melancholyShift 8s ease-in-out infinite alternate,
+    deepFlow 12s ease-in-out infinite;
+  filter: blur(0.4px);
+}
+
+@keyframes melancholyShift {
+  0% {
+    filter: hue-rotate(0deg) brightness(0.9) contrast(1.3) saturate(1.2)
+      blur(0.4px);
+    transform: scale(1);
+  }
+  100% {
+    filter: hue-rotate(25deg) brightness(0.7) contrast(1.5) saturate(1.4)
+      blur(0.8px);
+    transform: scale(1.015);
+  }
+}
+
+@keyframes deepFlow {
+  0% {
+    background-position: 0% 0%, 100% 100%, 80% 80%, 20% 20%, 90% 40%, 0% 0%,
+      0% 0%;
+  }
+  25% {
+    background-position: 40% 20%, 60% 80%, 60% 60%, 40% 40%, 70% 60%, 90deg 25%,
+      25% 25%;
+  }
+  50% {
+    background-position: 80% 40%, 20% 60%, 40% 40%, 60% 60%, 50% 80%, 180deg 50%,
+      50% 50%;
+  }
+  75% {
+    background-position: 20% 60%, 80% 40%, 20% 20%, 80% 80%, 30% 20%, 270deg 75%,
+      75% 75%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 100%, 80% 80%, 20% 20%, 90% 40%, 0% 0%,
+      0% 0%;
+  }
+}
+
+.emotion-theme-3 .current-emotion {
+  color: #e8e8e8;
+  text-shadow: 0 0 20px rgba(118, 75, 162, 1), 0 0 40px rgba(102, 126, 234, 0.8),
+    0 0 60px rgba(44, 62, 80, 0.6), 0 0 80px rgba(79, 91, 161, 0.4),
+    0 0 100px rgba(93, 109, 126, 0.3);
+  filter: drop-shadow(0 0 10px rgba(118, 75, 162, 0.6));
+  animation: melancholyGlow 5s ease-in-out infinite;
+}
+
+@keyframes melancholyGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 20px rgba(118, 75, 162, 1),
+      0 0 40px rgba(102, 126, 234, 0.8), 0 0 60px rgba(44, 62, 80, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(102, 126, 234, 1), 0 0 50px rgba(44, 62, 80, 0.9),
+      0 0 70px rgba(118, 75, 162, 0.7);
+  }
+}
+
+.emotion-theme-3 .particle {
+  background: radial-gradient(
+      circle,
+      rgba(118, 75, 162, 0.8) 0%,
+      rgba(102, 126, 234, 0.6) 40%,
+      transparent 70%
+    ),
+    radial-gradient(circle, rgba(44, 62, 80, 0.7) 20%, transparent 80%);
+  animation: float 10s infinite ease-in-out, pulse 4s infinite ease-in-out,
+    deepPulse 5s infinite ease-in-out;
+  filter: blur(0.4px);
+  box-shadow: 0 0 6px rgba(118, 75, 162, 0.4);
+}
+
+@keyframes deepPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 6px rgba(118, 75, 162, 0.6);
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(102, 126, 234, 0.8),
+      0 0 24px rgba(44, 62, 80, 0.4);
+    opacity: 0.8;
+    transform: scale(1.03);
+  }
+}
+
+/* 情绪4：愤怒/激烈 - 强烈红色 */
+.emotion-theme-4 {
+  background: radial-gradient(
+      ellipse at 40% 20%,
+      rgba(255, 65, 108, 0.9) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 80%,
+      rgba(255, 75, 43, 0.8) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 20% 60%,
+      rgba(139, 0, 0, 0.7) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 90% 30%,
+      rgba(255, 99, 99, 0.6) 0%,
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 10% 90%,
+      rgba(205, 32, 31, 0.5) 0%,
+      transparent 30%
+    ),
+    conic-gradient(
+      from 0deg,
+      #ff416c,
+      #ff4b2b,
+      #8b0000,
+      #ff6363,
+      #cd201f,
+      #ff416c
+    ),
+    linear-gradient(
+      45deg,
+      #ff416c 0%,
+      #ff4b2b 30%,
+      #8b0000 60%,
+      #ff6363 80%,
+      #cd201f 100%
+    );
+  animation: intenseFlash 3s ease-in-out infinite alternate,
+    fireStorm 5s ease-in-out infinite;
+  filter: blur(0.2px);
+}
+
+@keyframes intenseFlash {
+  0% {
+    filter: hue-rotate(0deg) brightness(1.3) contrast(1.4) saturate(1.6)
+      blur(0.2px);
+    transform: scale(1);
+  }
+  100% {
+    filter: hue-rotate(15deg) brightness(1.6) contrast(1.8) saturate(2)
+      blur(0.6px);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fireStorm {
+  0% {
+    background-position: 0% 0%, 100% 100%, 20% 60%, 90% 30%, 10% 90%, 0% 0%,
+      0% 0%;
+  }
+  25% {
+    background-position: 50% 30%, 50% 70%, 40% 40%, 80% 50%, 20% 80%, 90deg 25%,
+      25% 25%;
+  }
+  50% {
+    background-position: 100% 60%, 0% 40%, 60% 20%, 70% 70%, 30% 70%, 180deg 50%,
+      50% 50%;
+  }
+  75% {
+    background-position: 50% 90%, 50% 10%, 80% 0%, 60% 90%, 40% 60%, 270deg 75%,
+      75% 75%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 100%, 20% 60%, 90% 30%, 10% 90%, 0% 0%,
+      0% 0%;
+  }
+}
+
+.emotion-theme-4 .current-emotion {
+  color: #fff;
+  text-shadow: 0 0 25px rgba(255, 65, 108, 1), 0 0 45px rgba(255, 75, 43, 0.9),
+    0 0 65px rgba(139, 0, 0, 0.7), 0 0 85px rgba(255, 99, 99, 0.5),
+    0 0 105px rgba(205, 32, 31, 0.4);
+  filter: drop-shadow(0 0 20px rgba(255, 65, 108, 0.9));
+  animation: textPulse 1.5s infinite ease-in-out,
+    rageGlow 2s infinite ease-in-out;
+}
+
+@keyframes textPulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+@keyframes rageGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 25px rgba(255, 65, 108, 1), 0 0 45px rgba(255, 75, 43, 0.9),
+      0 0 65px rgba(139, 0, 0, 0.7);
+  }
+  50% {
+    text-shadow: 0 0 35px rgba(255, 75, 43, 1), 0 0 55px rgba(139, 0, 0, 1),
+      0 0 75px rgba(255, 65, 108, 0.8);
+  }
+}
+
+.emotion-theme-4 .particle {
+  background: radial-gradient(
+      circle,
+      rgba(255, 65, 108, 0.9) 0%,
+      rgba(255, 75, 43, 0.7) 40%,
+      transparent 70%
+    ),
+    radial-gradient(circle, rgba(139, 0, 0, 0.8) 20%, transparent 80%);
+  animation: float 3s infinite ease-in-out, pulse 1.5s infinite ease-in-out,
+    fireBlast 2s infinite ease-in-out;
+  filter: blur(0.2px);
+  box-shadow: 0 0 12px rgba(255, 65, 108, 0.7);
+}
+
+@keyframes fireBlast {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(255, 65, 108, 0.9);
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 75, 43, 1), 0 0 35px rgba(139, 0, 0, 0.6);
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* 响应式设计 - 移动设备优化 */
+@media (max-width: 768px) {
+  .current-emotion {
+    font-size: 2.5rem;
+  }
+}
+
+/* 全屏模式下的显示优化 */
+.fullscreen-mode .current-emotion {
+  font-size: 5rem;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+}

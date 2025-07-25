@@ -1,0 +1,21 @@
+# LETDANCE 简化版依赖包 - 仅包含Flask应用必需的包
+
+# Web应用框架
+flask>=2.3.0
+
+# LangChain 核心包
+langchain-core>=0.3.0
+langchain-openai>=0.3.0
+
+# Azure OpenAI
+openai>=1.50.0
+requests>=2.31.0
+
+# 数据处理和验证
+pydantic>=2.0.0
+
+# 配置管理
+python-dotenv>=1.0.0
+
+# 错误处理
+tenacity>=8.0.0 

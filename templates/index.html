@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LETDANCE - 心情记录日记</title>
+    <!-- 引入Chart.js库用于雷达图 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .app-container {
+        max-width: 900px;
+        width: 100%;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        padding: 30px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+        color: #667eea;
+        margin-bottom: 8px;
+      }
+
+      .header p {
+        color: #666;
+        font-size: 1rem;
+        margin-bottom: 15px;
+      }
+
+      .mood-input-section {
+        margin-bottom: 25px;
+      }
+
+      .section-title {
+        font-size: 1.3rem;
+        color: #333;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .mood-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+
+      .mood-option {
+        background: #f8f9fa;
+        border: 2px solid #e9ecef;
+        border-radius: 12px;
+        padding: 12px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+      }
+
+      .mood-option:hover {
+        background: #e9ecef;
+        transform: translateY(-2px);
+      }
+
+      .mood-option.selected {
+        background: #667eea;
+        color: white;
+        border-color: #667eea;
+      }
+
+      .custom-mood {
+        margin-top: 15px;
+      }
+
+      .custom-mood input {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e9ecef;
+        border-radius: 12px;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.3s ease;
+      }
+
+      .custom-mood input:focus {
+        border-color: #667eea;
+      }
+
+      .submit-btn {
+        width: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        margin-top: 15px;
+      }
+
+      .submit-btn:hover:not(:disabled) {
+        transform: translateY(-2px);
+      }
+
+      .submit-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      /* 情绪雷达图样式 */
+      .radar-section {
+        margin: 25px 0;
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 20px;
+      }
+
+      .radar-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 350px;
+        margin-top: 15px;
+      }
+
+      .radar-canvas {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .analysis-result {
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 20px;
+        margin-top: 20px;
+        display: none;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s ease;
+      }
+
+      .analysis-result.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .analysis-item {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .analysis-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .analysis-label {
+        font-weight: 600;
+        color: #667eea;
+        margin-bottom: 5px;
+      }
+
+      .analysis-content {
+        color: #555;
+        line-height: 1.4;
+      }
+
+      .keywords {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 5px;
+      }
+
+      .keyword-tag {
+        background: #667eea;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      .music-styles {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 5px;
+      }
+
+      .music-tag {
+        background: #f093fb;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      .history {
+        margin-top: 25px;
+      }
+
+      .history-item {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 15px;
+        margin-bottom: 12px;
+        border-left: 4px solid #667eea;
+      }
+
+      .history-mood {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+      }
+
+      .history-analysis {
+        color: #666;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        background: rgba(102, 126, 234, 0.05);
+        padding: 8px 12px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+      }
+
+      .history-time {
+        font-size: 0.8rem;
+        color: #999;
+        text-align: right;
+      }
+
+      .learning-status {
+        text-align: center;
+        color: #666;
+        font-size: 0.9rem;
+        margin: 20px 0;
+        padding: 10px;
+        background: rgba(102, 126, 234, 0.05);
+        border-radius: 8px;
+      }
+
+      .memory-status {
+        text-align: center;
+        color: #666;
+        font-size: 0.85rem;
+        margin-top: 10px;
+        padding: 8px;
+        background: rgba(118, 75, 162, 0.05);
+        border-radius: 8px;
+      }
+
+      .loading {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        flex-direction: column;
+      }
+
+      .loading.show {
+        display: flex;
+      }
+
+      .loading-text {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .empty-state {
+        text-align: center;
+        color: #999;
+        font-style: italic;
+        padding: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .app-container {
+          max-width: 100%;
+          margin: 10px;
+          padding: 20px;
+        }
+
+        .mood-options {
+          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+          gap: 8px;
+        }
+
+        .radar-container {
+          height: 280px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="header">
+        <h1>🎭 LETDANCE</h1>
+        <p>心情记录日记 - 用AI理解你的内心世界</p>
+        <div class="learning-status" id="learningStatus">
+          📚 正在学习你的情绪偏好...
+        </div>
+        <div class="memory-status" id="memoryStatus">
+          <span id="memoryText">🧠 情绪分析系统准备就绪</span>
+        </div>
+      </div>
+
+      <!-- 心情输入区域 -->
+      <div class="mood-input-section">
+        <h2 class="section-title">🌈 记录你的心情</h2>
+        <div class="mood-options" id="moodOptions">
+          <div class="mood-option" data-mood="开心">😊 开心</div>
+          <div class="mood-option" data-mood="难过">😢 难过</div>
+          <div class="mood-option" data-mood="愤怒">😠 愤怒</div>
+          <div class="mood-option" data-mood="焦虑">😰 焦虑</div>
+          <div class="mood-option" data-mood="平静">😌 平静</div>
+          <div class="mood-option" data-mood="兴奋">🤩 兴奋</div>
+          <div class="mood-option" data-mood="疲惫">😴 疲惫</div>
+          <div class="mood-option" data-mood="惊讶">😮 惊讶</div>
+        </div>
+
+        <div class="custom-mood">
+          <input
+            type="text"
+            id="customMoodInput"
+            placeholder="或者描述你的具体心情..."
+            maxlength="200"
+          />
+        </div>
+
+        <button class="submit-btn" id="submitBtn" onclick="submitMood()">
+          ✨ 分析我的心情
+        </button>
+      </div>
+
+      <!-- 情绪雷达图 -->
+      <div class="radar-section" id="radarSection" style="display: none">
+        <h2 class="section-title">📊 情绪雷达图</h2>
+        <div class="radar-container">
+          <canvas id="emotionRadarChart" class="radar-canvas"></canvas>
+        </div>
+      </div>
+
+      <!-- AI分析结果 -->
+      <div class="analysis-result" id="analysisResult">
+        <h2 class="section-title">🤖 AI分析结果</h2>
+
+        <div class="analysis-item">
+          <div class="analysis-label">核心情绪</div>
+          <div class="analysis-content" id="coreEmotion">-</div>
+        </div>
+
+        <div class="analysis-item">
+          <div class="analysis-label">情绪关键词</div>
+          <div class="keywords" id="keywords"></div>
+        </div>
+
+        <div class="analysis-item">
+          <div class="analysis-label">推荐音乐风格</div>
+          <div class="music-styles" id="musicStyles"></div>
+        </div>
+      </div>
+
+      <!-- 历史记录 -->
+      <div class="history">
+        <h2 class="section-title">📝 心情历史</h2>
+        <div id="historyList">
+          <div class="empty-state">还没有心情记录，开始你的第一条记录吧</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 加载动画 -->
+    <div class="loading" id="loading">
+      <div class="loading-text">🧠 AI正在分析你的心情...</div>
+      <div class="loading-spinner"></div>
+    </div>
+
+    <script>
+      // 全局变量
+      let selectedMood = null;
+      let emotionRadarChart = null;
+      const userId = "user_" + Math.random().toString(36).substr(2, 9);
+
+      // DOM元素
+      const moodOptions = document.querySelectorAll(".mood-option");
+      const customMoodInput = document.getElementById("customMoodInput");
+      const submitBtn = document.getElementById("submitBtn");
+      const loading = document.getElementById("loading");
+      const analysisResult = document.getElementById("analysisResult");
+      const historyList = document.getElementById("historyList");
+      const learningStatus = document.getElementById("learningStatus");
+      const radarSection = document.getElementById("radarSection");
+
+      // 初始化
+      document.addEventListener("DOMContentLoaded", function () {
+        loadHistory();
+        loadUserInsights();
+        loadMemoryInfo();
+        initializeRadarChart();
+
+        // 心情选项点击事件绑定
+        moodOptions.forEach((option) => {
+          option.addEventListener("click", function () {
+            selectMood(this.dataset.mood);
+          });
+        });
+
+        // 自定义心情输入事件
+        customMoodInput.addEventListener("input", function () {
+          if (this.value.trim()) {
+            clearMoodSelection();
+            selectedMood = this.value.trim();
+          }
+        });
+      });
+
+      // 初始化雷达图
+      function initializeRadarChart() {
+        const ctx = document
+          .getElementById("emotionRadarChart")
+          .getContext("2d");
+
+        emotionRadarChart = new Chart(ctx, {
+          type: "radar",
+          data: {
+            labels: [
+              "快乐",
+              "悲伤",
+              "愤怒",
+              "恐惧",
+              "惊讶",
+              "厌恶",
+              "平静",
+              "兴奋",
+            ],
+            datasets: [
+              {
+                label: "情绪强度",
+                data: [5, 3, 2, 2, 3, 1, 7, 4], // 默认数据
+                backgroundColor: "rgba(102, 126, 234, 0.2)",
+                borderColor: "rgba(102, 126, 234, 1)",
+                pointBackgroundColor: "rgba(102, 126, 234, 1)",
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: "rgba(102, 126, 234, 1)",
+                borderWidth: 2,
+                pointRadius: 5,
+                pointHoverRadius: 7,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              title: {
+                display: true,
+                text: "情绪维度分析 (0-10分)",
+                font: {
+                  size: 16,
+                  weight: "bold",
+                },
+                color: "#333",
+              },
+              legend: {
+                display: false,
+              },
+            },
+            scales: {
+              r: {
+                beginAtZero: true,
+                max: 10,
+                min: 0,
+                ticks: {
+                  stepSize: 2,
+                  color: "#666",
+                  font: {
+                    size: 12,
+                  },
+                },
+                grid: {
+                  color: "rgba(0, 0, 0, 0.1)",
+                },
+                pointLabels: {
+                  color: "#333",
+                  font: {
+                    size: 14,
+                    weight: "bold",
+                  },
+                },
+              },
+            },
+            interaction: {
+              intersect: false,
+            },
+            animation: {
+              duration: 1000,
+              easing: "easeInOutQuart",
+            },
+          },
+        });
+      }
+
+      // 更新雷达图数据
+      function updateRadarChart(emotionData) {
+        if (!emotionRadarChart || !emotionData) return;
+
+        const labels = [
+          "快乐",
+          "悲伤",
+          "愤怒",
+          "恐惧",
+          "惊讶",
+          "厌恶",
+          "平静",
+          "兴奋",
+        ];
+        const data = labels.map((label) => emotionData[label] || 0);
+
+        emotionRadarChart.data.datasets[0].data = data;
+        emotionRadarChart.update("active");
+
+        // 显示雷达图区域
+        radarSection.style.display = "block";
+      }
+
+      function selectMood(mood) {
+        // 清除之前的选择
+        moodOptions.forEach((opt) => opt.classList.remove("selected"));
+
+        // 选择当前心情
+        event.target.closest(".mood-option").classList.add("selected");
+        selectedMood = mood;
+        customMoodInput.value = "";
+      }
+
+      function clearMoodSelection() {
+        moodOptions.forEach((opt) => opt.classList.remove("selected"));
+      }
+
+      async function submitMood() {
+        const moodInput = selectedMood || customMoodInput.value.trim();
+
+        if (!moodInput) {
+          alert("请选择或输入你的心情");
+          return;
+        }
+
+        loading.classList.add("show");
+        submitBtn.disabled = true;
+        analysisResult.classList.remove("show");
+
+        try {
+          // 使用AI分析心情
+          const response = await fetch("/api/mood", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              user_id: userId,
+              mood: moodInput,
+              timestamp: new Date().toISOString(),
+            }),
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            // 显示AI分析结果
+            displayAnalysisResult(result.analysis);
+
+            // 重新加载历史记录和用户洞察
+            loadHistory();
+            loadUserInsights();
+            loadMemoryInfo();
+
+            // 清除选择
+            clearSelection();
+          } else {
+            alert("分析失败：" + (result.error || "未知错误"));
+          }
+        } catch (error) {
+          console.error("提交心情失败:", error);
+          alert("提交失败，请重试");
+        } finally {
+          loading.classList.remove("show");
+          submitBtn.disabled = false;
+        }
+      }
+
+      function displayAnalysisResult(analysis) {
+        // 更新核心情绪
+        document.getElementById("coreEmotion").textContent =
+          analysis.core_emotion || "未分析";
+
+        // 更新关键词
+        const keywordsContainer = document.getElementById("keywords");
+        keywordsContainer.innerHTML = "";
+        if (analysis.keywords && analysis.keywords.length > 0) {
+          analysis.keywords.forEach((keyword) => {
+            const tag = document.createElement("span");
+            tag.className = "keyword-tag";
+            tag.textContent = keyword;
+            keywordsContainer.appendChild(tag);
+          });
+        }
+
+        // 更新音乐风格
+        const musicContainer = document.getElementById("musicStyles");
+        musicContainer.innerHTML = "";
+        if (analysis.music_style && analysis.music_style.length > 0) {
+          analysis.music_style.forEach((style) => {
+            const tag = document.createElement("span");
+            tag.className = "music-tag";
+            tag.textContent = style;
+            musicContainer.appendChild(tag);
+          });
+        }
+
+        // 更新雷达图数据
+        if (analysis.emotion_radar) {
+          updateRadarChart(analysis.emotion_radar);
+        }
+
+        // 显示分析结果
+        analysisResult.classList.add("show");
+      }
+
+      function clearSelection() {
+        moodOptions.forEach((opt) => opt.classList.remove("selected"));
+        customMoodInput.value = "";
+        selectedMood = null;
+      }
+
+      async function loadHistory() {
+        try {
+          const response = await fetch(`/api/mood/history?user_id=${userId}`);
+          const result = await response.json();
+
+          if (result.success && result.history.length > 0) {
+            historyList.innerHTML = result.history
+              .map(
+                (item) => `
+              <div class="history-item">
+                <div class="history-mood">🎭 ${item.mood}</div>
+                <div class="history-analysis">🤖 ${item.analysis}</div>
+                <div class="history-time">${new Date(
+                  item.timestamp
+                ).toLocaleString()}</div>
+              </div>
+            `
+              )
+              .join("");
+          } else {
+            historyList.innerHTML =
+              '<div class="empty-state">还没有心情记录，开始你的第一条记录吧</div>';
+          }
+        } catch (error) {
+          console.error("加载历史记录失败:", error);
+        }
+      }
+
+      async function loadUserInsights() {
+        try {
+          const response = await fetch(`/api/user/insights?user_id=${userId}`);
+          const result = await response.json();
+
+          if (result.success) {
+            const insights = result.insights;
+            learningStatus.textContent = `📊 记录数: ${insights.total_records} | ${insights.learning_status}`;
+          }
+        } catch (error) {
+          console.error("加载用户洞察失败:", error);
+        }
+      }
+
+      async function loadMemoryInfo() {
+        try {
+          const response = await fetch(`/api/memory/summary?user_id=${userId}`);
+          const result = await response.json();
+
+          if (result.success) {
+            const summary = result.memory_summary;
+            document.getElementById(
+              "memoryText"
+            ).textContent = `🧠 情绪分析系统运行正常`;
+          }
+        } catch (error) {
+          console.error("加载记忆信息失败:", error);
+        }
+      }
+    </script>
+  </body>
+</html>
